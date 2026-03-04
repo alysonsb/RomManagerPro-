@@ -1,48 +1,106 @@
 <div align="center">
 
+# ⚡ ROM Manager Pro
+
 <img src="https://img.shields.io/badge/Platform-Windows%20%7C%20Linux-0D1117?style=for-the-badge&logo=windows&logoColor=white"/>
 <img src="https://img.shields.io/badge/ADB-Auto_Setup-4ADE80?style=for-the-badge&logo=android&logoColor=white"/>
 <img src="https://img.shields.io/badge/Zero_Config-Ready_to_Run-0F2A1A?style=for-the-badge"/>
-<img src="https://img.shields.io/badge/License-Proprietary-F87171?style=for-the-badge"/>
+<img src="https://img.shields.io/badge/License-MIT-4ADE80?style=for-the-badge"/>
 
-# ⚡ ROM Manager Pro
+Cross-platform Android ROM management tool built with **Python + PySide6**
 
+Developed by [@alysonsb](https://github.com/alysonsb)
 
-> Developed by [@alysonsb](https://github.com/alysonsb)
+</div>
 
-RomManagerPro is a cross-platform desktop tool for Android ROM management, built with Python and PySide6. It lets you extract partitions from `payload.bin` files, flash via fastboot, manage apps, run ADB/Fastboot commands and more — all through a modern graphical interface.
+---
+
+## 📌 Overview
+
+**RomManagerPro** is a modern desktop application designed to simplify Android ROM management.
+
+It allows you to:
+
+- Extract partitions from `payload.bin`
+- Flash images via Fastboot
+- Manage apps using ADB
+- Execute advanced commands
+- Perform ROM operations safely through a clean graphical interface
+
+No complex setup required.
 
 ---
 
 ## ✨ Features
 
-- 🖥 **Device Info** — Model, Android version, Serial, IMEI, RAM, Storage, Battery
-- 📦 **App Manager** — Install APKs, list packages, debloat (disable/re-enable system apps)
-- ⌨ **ADB Shell** — Run ADB commands directly from the UI
-- ⚡ **Fastboot** — Flash individual partitions and quick actions (reboot, bootloader, recovery)
-- 🗜 **Flash AOSP** — Extract `payload.bin` and flash partitions via fastboot
-- 🔥 **Flash HyperOS** — Extract and run official flash scripts
-- 🌐 **Multi-language** — English, Português, Español, Русский
+### 📱 Device Information
+- Model
+- Android Version
+- Serial Number
+- IMEI
+- RAM
+- Storage
+- Battery status
+
+### 📦 App Management
+- Install APK files
+- List installed packages
+- Disable / Re-enable system apps (debloat)
+
+### ⌨ ADB Shell
+- Execute custom ADB commands directly from the interface
+
+### ⚡ Fastboot Tools
+- Flash individual partitions
+- Reboot system / bootloader / recovery
+- Quick device actions
+
+### 🗜 AOSP ROM Flashing
+- Extract `payload.bin`
+- Automatically flash extracted partitions
+
+### 🔥 HyperOS Flash Support
+- Extract official packages
+- Execute built-in flash scripts
+
+### 🌍 Multi-language Support
+- English
+- Português
+- Español
+- Русский
 
 ---
 
 ## 🚀 Installation
 
-Download the installer for your operating system from the [Releases](https://github.com/alysonsb/RomManagerPro-/releases/latest) page:
+Download the latest version:
+
+https://github.com/alysonsb/RomManagerPro-/releases/latest
 
 | Platform | File |
 |----------|------|
-| 🐧 Linux / macOS | `RomManagerPro.sh` |
+| 🐧 Linux | `RomManagerPro.sh` |
 | 🪟 Windows | `RomManagerPro-Setup.exe` |
 
-**Linux / macOS:**
+### Linux
 ```bash
+chmod +x RomManagerPro.sh
 ./RomManagerPro.sh
 ```
 
-**Windows:** Run `RomManagerPro-Setup.exe` and follow the installer steps.
+### Windows
+Run `RomManagerPro-Setup.exe` and follow the installer steps.
 
-> The app will automatically offer to install **Android Platform Tools** and **payload-dumper-go** on first launch if they are not already present on your system.
+---
+
+## 🔧 First Launch
+
+On first startup, RomManagerPro will automatically offer to install:
+
+- Android Platform Tools (ADB / Fastboot)
+- payload-dumper-go
+
+No manual configuration required.
 
 ---
 
@@ -50,43 +108,47 @@ Download the installer for your operating system from the [Releases](https://git
 
 ```
 RomManagerPro/
-├── main.py          # Entry point and main window
-├── config.py        # Constants, URLs and translations
-├── threads.py       # Background threads (flash, extraction, downloads)
-├── dialogs.py       # Auxiliary dialogs and windows
-├── ui_helpers.py    # Reusable UI components
-└── utils.py         # Utility functions (ADB, versioning, permissions)
+├── main.py          # Entry point
+├── config.py        # Constants and translations
+├── threads.py       # Background operations
+├── dialogs.py       # Dialog windows
+├── ui_helpers.py    # UI components
+└── utils.py         # ADB / Fastboot utilities
 ```
 
 ---
 
-## 🙏 Credits & Third-Party Dependencies
+## 🙏 Credits
 
 ### payload-dumper-go
-This project uses **[payload-dumper-go](https://github.com/ssut/payload-dumper-go)**, developed by **[ssut](https://github.com/ssut)**, to extract partitions from `payload.bin` files found in Android ROM packages.
 
-- 🔗 Repository: https://github.com/ssut/payload-dumper-go
-- 📄 License: [Apache License 2.0](https://github.com/ssut/payload-dumper-go/blob/master/LICENSE)
+Used for extracting partitions from `payload.bin`.
 
-RomManagerPro automatically downloads `payload-dumper-go` directly from its official GitHub releases and invokes it as an external process for partition extraction. No modifications are made to the original binary.
+Repository:
+https://github.com/ssut/payload-dumper-go
 
-> Special thanks to **ssut** for the excellent open-source work that powers the core ROM extraction functionality of this project.
+License:
+Apache License 2.0
 
----
-
-### Android Platform Tools (ADB / Fastboot)
-Uses the **Android Platform Tools** distributed by Google for ADB communication and Fastboot operations.
-
-- 🔗 https://developer.android.com/tools/releases/platform-tools
+RomManagerPro downloads the original binary directly from official releases without modification.
 
 ---
 
-## ☕ Support the Project
+### Android Platform Tools
 
-If this project was helpful to you, consider buying me a coffee!
+Official ADB and Fastboot tools provided by Google.
+
+https://developer.android.com/tools/releases/platform-tools
+
+---
+
+## ☕ Support
+
+If this project helps you, consider supporting its development.
 
 ---
 
 ## 📄 License
 
-Distributed under the MIT License. See the `LICENSE` file for more details.
+This project is licensed under the MIT License.  
+See the `LICENSE` file for details.
